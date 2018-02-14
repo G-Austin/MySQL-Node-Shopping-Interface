@@ -1,7 +1,7 @@
 {
   "name": "bamazon_node_mysql",
   "version": "1.0.0",
-  "description": "",
+  "description": "#### A CLI storefront made with MySQL, The app will take in orders from customers and deplete stock from the store's inventory.",
   "main": "BamazonCustomer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +11,14 @@
   "dependencies": {
     "inquirer": "^5.0.1",
     "mysql": "^2.15.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/G-Austin/MySQL-Node-Shopping-Interface.git"
+  },
+  "bugs": {
+    "url": "https://github.com/G-Austin/MySQL-Node-Shopping-Interface/issues"
+  },
+  "homepage": "https://github.com/G-Austin/MySQL-Node-Shopping-Interface#readme"
 }

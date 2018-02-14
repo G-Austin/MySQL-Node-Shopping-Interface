@@ -3,9 +3,9 @@ var inquirer = require("inquirer");
 
 var connection = mysql.createConnection({
 	host: "localhost",
-	port: "3306",
+	port: "8889",
 	user: "root",
-	password: "K,-lGt*fa5nm",
+	password: "root",
 	database: "Bamazon_DB"
 });
 
@@ -15,11 +15,11 @@ connection.connect(function(err) {
 	displayAll();
 	userPromptItem();
 	//connection.end();
-	
+
 })
 
 function displayAll() {
-	connection.query("SELECT * FROM products", 
+	connection.query("SELECT * FROM products",
 		function(err, res) {
 			if (err) throw err;
 			console.log(res);
@@ -72,9 +72,9 @@ function userPromptItem() {
 				//console.log('productData = ' + JSON.stringify(productData));
 				if (quantity <= productData.stock_quantity) {
 					console.log('Congratulations! Order submitted');
-				
+
 					var updateQueryStr = 'UPDATE products SET stock_quantity = ' + (productData.stock_quantity - quantity) + ' WHERE item_id = ' + item;
-					
+
 					connection.query(updateQueryStr, function(err, data) {
 						if (err) throw err;
 						console.log('Your order has been placed. Your total is $' + productData.price * quantity);
